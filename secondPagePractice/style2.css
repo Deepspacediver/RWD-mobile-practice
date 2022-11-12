@@ -4,6 +4,7 @@
   --secondary: #fc2e20;
   --tertiary: #010100;
   font-family: "Cabin", sans-serif;
+  font-size: 16px;
 }
 
 * {
@@ -19,15 +20,14 @@ a {
 
 body {
 }
-h3{
-
+h3 {
   font-size: 1.3rem;
-  padding: .8rem;
+  padding: 0.8rem;
   text-align: center;
   border-bottom: 2px solid var(--primary);
   max-width: 30%;
   margin: 0 auto;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 /*Mobile design*/
 
@@ -40,27 +40,28 @@ h3{
 }
 h1 {
   border-bottom: 3px solid var(--primary);
-  flex: 0 1 30vw;
+  flex: 0 1 25vw;
   text-align: center;
   font-size: 1.3rem;
 }
 .nav-bar ul {
   display: none;
 }
-.grid{
+.grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
 }
 #welcome {
   background-color: var(--primary);
   padding: 1rem;
-  gap: .5rem;
+  gap: 0.5rem;
+  justify-content: center;
   align-items: center;
 }
 #welcome h2 {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
-#welcome .leading{
+#welcome .leading {
   font-size: 1.1rem;
 }
 .welcome-text {
@@ -75,126 +76,140 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   padding: 0.4rem;
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--tertiary);
   border-radius: 1rem;
   background-color: var(--secondary);
   transition: filter 200ms;
 }
 .welcome-text .button:hover,
 .button:focus {
-  filter: saturate(80%);
+  filter: saturate(70%);
 }
 .welcome-img {
   grid-column: 5/9;
   padding-bottom: 1rem;
+  margin: 0 auto;
 }
 .welcome-img img {
   border-radius: 5rem;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-  max-width: 100%;
+  width: 100%;
 }
-
 
 /* Staff*/
 
 #staff {
   background-color: var(--secondary);
-  padding: .5rem;
+  padding: 0.5rem;
 }
-
-.staff-members a{
+.staff-members {
+}
+.staff-members a {
   grid-column: 1/9;
   display: flex;
-  padding: .5rem;
+  padding: 1rem;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
+  gap: 0.5rem;
   text-align: center;
-
   font-size: 1.2rem;
-}
-.staff-members img{
+  background-color: var(--primary);
+  border-radius: 2rem;
   width: 60%;
+  margin: 1rem auto;
+}
+.staff-members a img {
+  max-width: 50%;
   border-radius: 10rem;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Services*/
-#services{
+#services {
   background-color: var(--primary);
-  padding: .5rem;
-
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
 }
-#services h3{
+#services h3 {
   border-bottom: 2px solid var(--secondary);
-  
 }
 .services-list {
+  box-sizing: border-box;
   align-items: center;
-  gap: .5rem;
-
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  margin-left: auto;
+  box-sizing: border-box;
+  justify-content: flex-end;
 }
 .services-list li {
   background-color: var(--secondary);
   border-radius: 2rem;
-  padding: 1rem;
   text-align: center;
-
+  grid-column: span 4;
+  padding: 0.5rem;
+  height: 90%;
 }
-.services-list li:nth-child(1){
-  grid-column: 1 /5;
-}
-.services-list li:nth-child(2){
-  grid-column: 5 /9;
-}
-.services-list li:nth-child(3){
-  grid-row: 2;
-  grid-column: 2/8;
+.services-list li:nth-child(3) {
+  grid-column: 3/7;
 }
 
 .services-list li img {
-  max-width: 100%;
+  width: 60%;
 }
 
 /* Contact */
 
 #contact {
   background-color: var(--secondary);
-  padding: .5rem;
+  padding: 0.5rem;
   width: 100%;
   box-sizing: border-box;
 }
-form{
-  max-width: 400px;
+form {
   width: 80%;
   margin: 1rem auto;
   box-sizing: border-box;
   text-align: center;
-  
-
 }
-form > * { 
+form > * {
   box-sizing: border-box;
 
   width: 100%;
   border-radius: 2rem;
   background-color: var(--primary);
+  border-color: var(--tertiary);
   color: var(--tertiary);
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
   padding: 1rem;
+  font-family: inherit;
 }
-form > *::placeholder{
+form > *::placeholder {
   color: var(--tertiary);
-  opacity: .5;
+  opacity: 0.5;
 }
-textarea{
+form > *:focus {
+  outline: none !important;
+  box-shadow: 0 0 15px var(--primary);
+}
+textarea {
   resize: none;
-  
+  border: 2px solid var(--tertiary);
 }
-
+form .button {
+  width: 60%;
+  text-transform: uppercase;
+  transition: filter 200ms;
+  font-size: 0.8rem;
+}
+form .button:hover {
+  cursor: pointer;
+  filter: saturate(2);
+}
 /* Footer*/
 
-footer{
+footer {
   background-color: var(--secondary);
   display: flex;
   align-items: center;
@@ -202,14 +217,122 @@ footer{
   padding: 0 1rem 1rem 1rem;
 }
 
-.socials{
+.socials {
   display: flex;
   justify-content: flex-end;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 .socials li {
-  max-width:  20%;
+  max-width: 20%;
 }
 .socials img {
   width: 100%;
+}
+
+@media (max-width: 316px) {
+  #welcome * {
+    text-align: center;
+    grid-column: 1/9;
+  }
+}
+
+@media (min-width: 600px) {
+  :root {
+    font-size: 1.3rem;
+  }
+  #welcome .button {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .staff-members a {
+    grid-column: span 4;
+    display: block;
+  }
+
+  .staff-members a img {
+    max-width: 80%;
+    margin-bottom: 0.5rem;
+  }
+  .staff-members a:first-child {
+    grid-column: span 9;
+  }
+  
+  .services-list li img {
+    width: 40%;
+  }
+}
+@media (min-width: 960px) {
+  :root {
+    font-size: 2rem;
+  }
+  nav, header, section, footer {
+   padding-left: 10rem m !important;
+  }
+  .nav-bar ul {
+    display: block;
+    display: flex;
+    gap: 0.5rem;
+    font-weight: bold;
+    padding-right: 0rem;
+  }
+  .nav-bar ul li {
+    border-bottom: 1px solid var(--primary);
+    width: 4rem;
+    text-align: center;
+    font-size: .7rem;
+  }
+
+  #welcome {
+    height: 70vh;
+  }
+  .staff-members a img {
+    max-width: 70%;
+  }
+  .services-list {
+    gap: 1rem;
+  }
+  .services-list li {
+    grid-column: 2/8 !important;
+  }
+  .services-list li img{
+    width: 20%;
+  }
+  form{
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: calc(1rem + .8vw);
+  }
+  .grid{
+    grid-template-columns: repeat(9, 1fr);
+  }
+  #welcome {
+    padding-left: 5vw;
+  }
+  h1{
+    flex-basis: 15vw;
+  }
+  
+  
+  .staff-members a{
+    grid-column: span 3 !important;
+  }
+  .staff-members a img {
+    max-width: 100% !important;
+  }
+  .services-list {
+    justify-content: center;
+    margin-left: 20%;
+
+  }
+  .services-list li {
+    grid-column: span 2 !important;
+  }
+  .services-list li img {
+    width: 50%;
+    max-width: 200px;
+  }
 }
